@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest>
+        <field key="author" value="Diego Andrés Ramírez Aragón" />
+        <field key="version" value="2.5.1" />
+        <field key="description" value="Group extended plugin.&lt;br&gt;
+        Extends group with:&lt;br&gt;
+        - Extra type&lt;br&gt;
+        - Members management&lt;br&gt;
+        - Groups as members (aka subgroups)&lt;br&gt;
+        - Global feature enable/disable (forums, pages, files)&lt;br&gt;
+        - Handle group icon with the proportional resize against square icons." />
+        <field key="website" value="http://www.somosmas.org/" />
+        <field key="copyright" value="(C) Corporación Somos más 2008" />
+		<field key="licence" value="GNU Public License version 2" />
+		<field key="elgg_version" value="2009031301" />
+</plugin_manifest>

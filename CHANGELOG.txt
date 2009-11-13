@@ -1,0 +1,33 @@
+Version 2.5.1
+    Functions group_iconprocess_handler() and group_iconprocess_overwrite was deleted because de new file actions/edit.php implement a better managment for icons.
+    The new file actions/edit.php replace edit function of groups mod
+    Added the give admin rights capability 
+
+Version 2.5
+	Compatibility with Elgg 1.5
+	Removed friend/picker.php in favor the default implementation.
+	
+Version 2.4
+	Added support for change the default square icons for groups
+	
+Version 2.3
+	Updated event hook to be complaint with the new events introduced in SVN
+
+Version 2.2
+	Removes group as profile view it is now available in grouplayout plugin
+	
+Version 2.1
+	Updates for work with the new features added to groups in Elgg (2531)
+	Added global configuration for enable/disable:
+		- Group forums
+		- Group pages
+		- Group files
+	Modified the invite friends page for let you invite groups as group members
+	Group membership management	
+		
+Version 2.0
+	Bug fixing
+	Added the group as profile view to mimic the profile layout view README file for instructions
+
+Version 1.0
+	Initial Release
