@@ -40,7 +40,6 @@
 		$info .= "<p><a href=\"{$url}\">{$wording}</a></p>";
 	$info .= "</div>";
 	$info .= "<p><b><a href=\"" . $vars['entity']->getUrl() . "\">" . $vars['entity']->name . "</a></b></p>";
-error_log("Alog!!!".$vars['entity']->group_type);
 	$info .= "<p class=\"owner_timestamp\">".elgg_view('output/tags', array('tags' => elgg_echo($vars['entity']->group_type),'object'=>'group'))."</p>";
 	$info .= "<p class=\"owner_timestamp\">" . $vars['entity']->briefdescription . "</p>";
 
