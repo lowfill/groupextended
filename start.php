@@ -129,7 +129,7 @@ function groupextended_fields($hook, $entity_type, $returnvalue, $params){
   if(file_exists(dirname(__FILE__)."/config.php")){
     @require_once (dirname(__FILE__))."/config.php";
   }
-  $fields = array_merge(array('group_type'=>array("radio",$options,"groups",ACCESS_PUBLIC)),$returnvalue);
+  $fields = array_merge(array('group_type'=>array("radio",$options,"groups",ACCESS_PUBLIC),'icon'=>'file'),$returnvalue);
   return $fields;
 }
 

@@ -18,16 +18,7 @@ $group_context = get_input("group_context","groups");
 
 	<?php echo elgg_view('input/securitytoken'); ?>
 
-	<p>
-		<label><?php echo elgg_echo("groups:icon"); ?><br />
-		<?php
-
-			echo elgg_view("input/file",array('internalname' => 'icon'));
-
-		?>
-		</label>
-	</p>
-<?php
+  <?php
 
 	//var_export($vars['profile']);
 	if (is_array($vars['config']->group) && sizeof($vars['config']->group) > 0)
