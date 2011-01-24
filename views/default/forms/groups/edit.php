@@ -43,11 +43,15 @@ $group_context = get_input("group_context","groups");
             echo elgg_view("input/hidden",array("internalname"=>$shortname,"value"=>$options));
             continue;
           }
+          $legend = elgg_echo("{$field_context}:{$shortname}:legend");
+          if(strpos($legend,$field_context)===0){ 
+          	$legend="";
+          }
 ?>
 
 	<p>
 		<label>
-			<?php echo elgg_echo("{$field_context}:{$shortname}") ?><br />
+			<?php echo elgg_echo("{$field_context}:{$shortname}") ?> <small><?php echo $legend;?></small><br />
 			<?php
 			if (is_plugin_enabled('gmaplocationfield') && $valtype=='gmap'){
 			  echo elgg_view("input/{$valtype}",array('entity' => $vars['entity'],'internalname'=>$shortname));
@@ -76,12 +80,14 @@ $group_context = get_input("group_context","groups");
 
 		}
 
+		$membership = get_plugin_setting('membership','groupextended');
+		$membership = (empty($vars['entity']->membership)) ? $membership: $vars['entity']->membership;
 ?>
 <fieldset>
 	<p>
 		<label>
 			<?php echo elgg_echo('groups:membership'); ?><br />
-			<?php echo elgg_view('input/access', array('internalname' => 'membership','value' => $vars['entity']->membership, 'options' => array( ACCESS_PRIVATE => elgg_echo('groups:access:private'), ACCESS_PUBLIC => elgg_echo('groups:access:public')))); ?>
+			<?php echo elgg_view('input/access', array('internalname' => 'membership','value' => $membership, 'options' => array( ACCESS_PRIVATE => elgg_echo('groups:access:private'), ACCESS_PUBLIC => elgg_echo('groups:access:public')))); ?>
 		</label>
 	</p>
 	<?php

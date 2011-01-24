@@ -21,6 +21,7 @@ $spanish = array(
 
   'groupextended:invitegroups'=>'¿Permitir grupos como miembros de grupos?',
   'groupextended:squareicon'=>"¿Cortar el ícono de los grupos a un cuadrado?",
+  'groupextended:default_membership'=>'¿Membresia por defecto?',
   'groupextended:invite:groups'=>'Invitar grupos',
   'groupextended:invite:subject' => "¡%s ha sido invitado a unirse a %s!",
   'groupextended:invite:body' => "Hola %s,
