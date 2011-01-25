@@ -57,7 +57,7 @@
 		          }
 
 
-		          if ($shortname != "name") {
+		          if ($shortname != "name" && $shortname !='icon') {
 				        $value = $vars['entity']->$shortname;
 
 					    if (!empty($value)) {
