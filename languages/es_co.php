@@ -26,7 +26,7 @@ $spanish = array(
   'groupextended:invite:subject' => "¡%s ha sido invitado a unirse a %s!",
   'groupextended:invite:body' => "Hola %s,
 
-Tu grupo '%s' ha sido invitado a unirse al grupo '%s', haga click en el siguiente link para confirmar su participación:
+Su grupo '%s' ha sido invitado a unirse al grupo '%s', haga click en el siguiente link para confirmar su participación:
 
 %s",
 
