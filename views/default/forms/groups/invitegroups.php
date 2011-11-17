@@ -18,6 +18,8 @@ $forward_url = $group->getURL();
 ?>
 <form action="<?php echo $vars['url']; ?>action/groups/addtogroup-group" method="post">
 	<?php
+	echo elgg_view('input/securitytoken');
+	
 	if ($groups_ = get_entities("group","",0,"",null,0, false)) {
 	  $groups = array();
 	  foreach($groups_ as $group_){

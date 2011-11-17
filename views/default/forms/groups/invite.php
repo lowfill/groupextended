@@ -44,7 +44,7 @@ $forward_url = $group->getURL();
 </div>
 <script type="text/javascript">
 jQuery(document).ready(function(){
-    jQuery("#groupextended-invite > ul").tabs();
+    jQuery("#groupextended-invite").tabs();
 });
 
 </script>

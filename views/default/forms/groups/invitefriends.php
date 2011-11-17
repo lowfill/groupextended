@@ -15,19 +15,17 @@ $forward_url = $group->getURL();
 
 
 ?>
-<form action="<?php echo $vars['url']; ?>action/groups/addtogroup" method="post">
+<form action="<?php echo $vars['url']; ?>action/groups/invite" method="post">
+
 	<?php
-	if ($friends_ = get_entities_from_relationship('friend',$_SESSION['guid'],false,'user','',0,'',9999)) {
-	  $friends = array();
-	  foreach($friends_ as $friend){
-	    if(!$group->isMember($friend)){
-	      $friends[]=$friend;
-	    }
-	  }
-	  echo elgg_view('friends/picker',array('entities' => $friends, 'internalname' => 'user_guid','highlight' => 'all'));
+	echo elgg_view('input/securitytoken');
+
+	if ($friends = get_loggedin_user()->getFriends('', 0)) {
+		echo elgg_view('friends/picker',array('entities' => $friends, 'internalname' => 'user_guid', 'highlight' => 'all'));	
 	}
-	?> 
-	<input type="hidden" name="forward_url" value="<?php echo $forward_url; ?>" /> 
-	<input type="hidden" name="group_guid" value="<?php echo $group->guid; ?>" /> 
+	
+	?>
+	<input type="hidden" name="forward_url" value="<?php echo $forward_url; ?>" />
+	<input type="hidden" name="group_guid" value="<?php echo $group->guid; ?>" />
 	<input type="submit" value="<?php echo elgg_echo('invite'); ?>" />
 </form>

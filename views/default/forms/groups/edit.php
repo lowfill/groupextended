@@ -95,7 +95,7 @@ $group_context = get_input("group_context","groups");
 			$this_owner = $vars['entity']->owner_guid;
 			if (!$this_owner) $this_owner = get_loggedin_userid();
 
-			$access = array(ACCESS_FRIENDS => elgg_echo("access:friends:label"), 1 => elgg_echo("LOGGED_IN"), 2 => elgg_echo("PUBLIC"));
+			$access = array(ACCESS_FRIENDS => elgg_echo("access:friends:label"), ACCESS_LOGGED_IN => elgg_echo("LOGGED_IN"), ACCESS_PUBLIC => elgg_echo("PUBLIC"));
 			$collections = get_user_access_collections($this_owner);
 			if (is_array($collections))
 			{
@@ -103,8 +103,11 @@ $group_context = get_input("group_context","groups");
 					$access[$c->id] = $c->name;
 			}
 
-			echo elgg_view('input/access', array('internalname' => 'vis', 'value' =>  ($vars['entity']->access_id ? $vars['entity']->access_id : ACCESS_PUBLIC), 'options' => $access));
-
+			$current_access = ($vars['entity']->access_id ? $vars['entity']->access_id : ACCESS_PUBLIC);
+			echo elgg_view('input/access', array('internalname' => 'vis', 
+												'value' =>  $current_access,
+												'options' => $access));
+			
 
 			?>
 		</label>
@@ -160,19 +163,21 @@ $group_context = get_input("group_context","groups");
 </form>
 </div>
 
+<?php
+if ($vars['entity']) {
+?>
 <div class="contentWrapper">
 <div id="delete_group_option">
 	<form action="<?php echo $vars['url'] . "action/groups/delete"; ?>">
 		<?php
-			if ($vars['entity'])
-			{
+			echo elgg_view('input/securitytoken');
 				$warning = elgg_echo("groups:deletewarning");
 			?>
 			<input type="hidden" name="group_guid" value="<?php echo $vars['entity']->getGUID(); ?>" />
-			<input type="submit" name="delete" value="<?php echo elgg_echo('groups:delete'); ?>" onclick="javascript:return confirm('<?php echo $warning; ?>')"/><?php
-			}
-		?>
+			<input type="submit" name="delete" value="<?php echo elgg_echo('groups:delete'); ?>" onclick="javascript:return confirm('<?php echo $warning; ?>')"/>
 	</form>
 </div><div class="clearfloat"></div>
 </div>
-
+<?php
+}
+?>

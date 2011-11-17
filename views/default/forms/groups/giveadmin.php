@@ -28,6 +28,7 @@ foreach($members_ as $member) {
 <div class="contentWrapper">
 <h2><?php echo sprintf(elgg_echo('groups:members'), $group->name); ?></h2>
 <form action="<?php echo $vars['url']; ?>action/groups/giveadmin" method="post">
+<?php echo elgg_view('input/securitytoken');?>
 <p>
     <?php echo elgg_view('input/pulldown', array(
         'internalname' => 'user_guid',
